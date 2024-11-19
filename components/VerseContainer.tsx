@@ -204,7 +204,7 @@ const VerseContainer = () => {
           <h1 className="text-3xl font-bold text-white text-center leading-loose">
             {verseData.text}
           </h1>
-          <div className="mt-5">
+          <div className="mt-5 grid md:grid-cols-4 grid-cols-1 gap-5">
             {answers.map((answer) => (
               <button
                 key={answer}
