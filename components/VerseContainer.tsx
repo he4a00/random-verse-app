@@ -204,7 +204,7 @@ const VerseContainer = () => {
       {verseData ? (
         <div className="container flex items-center justify-center flex-col">
           <div className=" max-h-[50vh]">
-            <h1 className="text-3xl font-bold text-white text-center leading-loose break-words md:text-2xl text-xl whitespace-pre-wrap">
+            <h1 className="font-bold text-white text-center leading-loose break-words md:text-2xl text-xl whitespace-pre-wrap">
               {verseData.text}
             </h1>
           </div>
