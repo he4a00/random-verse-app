@@ -10,6 +10,7 @@ const VerseContainer = () => {
   const [answers, setAnswers] = useState<string[]>([]);
   const [correct, IsCorrect] = useState<boolean>();
   const [selectedAnswer, setSelectedAnswer] = useState<string>("");
+  const [score, setScore] = useState(0);
 
   const surahNamesInArabic = [
     "سُورَةُ ٱلْفَاتِحَةِ",
@@ -186,19 +187,19 @@ const VerseContainer = () => {
     setSelectedAnswer(answer);
     if (answer === actualSurahName) {
       IsCorrect(true);
+      setScore(score + 1);
     } else {
       IsCorrect(false);
+      setScore(0);
     }
   };
-
-  // TODO: make a score counter
 
   if (isSurahLoading || isVerseLoading) {
     return <div className="text-white">جار التحميل...</div>;
   }
 
   return (
-    <div className="p-14 bg-black opacity-60 rounded-md">
+    <div className="p-14 bg-black opacity-60 rounded-md container">
       {verseData ? (
         <div className="container flex items-center justify-center flex-col">
           <h1 className="text-3xl font-bold text-white text-center leading-loose">
@@ -232,6 +233,9 @@ const VerseContainer = () => {
           >
             التالي
           </button>
+          <h1 className="text-xl text-white font-semibold mt-5">
+            عدد الاجابات الصحيحة : {score}
+          </h1>
         </div>
       ) : (
         <div className="text-white">حدث خطأ في التحميل</div>
