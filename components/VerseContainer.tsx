@@ -200,12 +200,14 @@ const VerseContainer = () => {
   }
 
   return (
-    <div className="p-14 bg-black opacity-60 rounded-md container">
+    <div className="p-5 md:p-14 bg-black opacity-60 rounded-md">
       {verseData ? (
         <div className="container flex items-center justify-center flex-col">
-          <h1 className="text-3xl font-bold text-white text-center leading-loose">
-            {verseData.text}
-          </h1>
+          <div className=" max-h-[50vh]">
+            <h1 className="text-3xl font-bold text-white text-center leading-loose break-words md:text-2xl text-xl whitespace-pre-wrap">
+              {verseData.text}
+            </h1>
+          </div>
           <div className="mt-5 grid md:grid-cols-4 grid-cols-1 gap-5">
             {answers.map((answer) => (
               <button
