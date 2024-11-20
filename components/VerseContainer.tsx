@@ -147,6 +147,7 @@ const VerseContainer = () => {
   };
 
   const getRandomSurah = () => {
+    setSelectedAnswer("");
     const randomSurahNumber = Math.floor(Math.random() * 114) + 1;
     setSurahNumber(randomSurahNumber);
   };
